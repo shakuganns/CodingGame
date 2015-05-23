@@ -12,6 +12,8 @@ import android.view.View;
 
 /**
  * Created by 圣麟 on 2015/5/23.
+ *
+ * 未完成。。。
  */
 public class SideBar extends View {
     public static final String TAG = SideBar.class.getName();
