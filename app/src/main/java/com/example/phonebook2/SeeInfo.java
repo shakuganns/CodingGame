@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -23,8 +24,10 @@ import java.util.Map;
 public class SeeInfo extends ActionBarActivity {
 
     public static int i;
+    private Intent intent;
     private ListView infoList;
     private SimpleAdapter adapter;
+    private Button deletePersonBtn;
 
     private void init() {
         infoList = (ListView) findViewById(R.id.seeinfoList);
@@ -34,8 +37,8 @@ public class SeeInfo extends ActionBarActivity {
         infoList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                if(i==1) {
-                    Intent intent=new Intent();
+                if (i == 1) {
+                    Intent intent = new Intent();
 
                     intent.setAction("android.intent.action.CALL");
 
@@ -43,6 +46,16 @@ public class SeeInfo extends ActionBarActivity {
 
                     startActivity(intent);
                 }
+            }
+        });
+        deletePersonBtn = (Button) findViewById(R.id.deletePerson);
+        deletePersonBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Database database = new Database(SeeInfo.this);
+                database.DeletePerson(Database.person[i].getName());
+                intent = new Intent(SeeInfo.this, MainActivity.class);
+                startActivity(intent);
             }
         });
     }

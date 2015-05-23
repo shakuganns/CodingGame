@@ -30,12 +30,26 @@ public class Database extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * 检查添加的数据是否存在冲突
+     */
+    public void Check() {
+    }
+
     public void WriteDatabase(String name,String phone) {
         SQLiteDatabase dbWrite = getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put("name",name);
         cv.put("phone",phone);
         dbWrite.insert("person",null,cv);
+        dbWrite.close();
+    }
+
+    public void DeletePerson(String name) {
+        SQLiteDatabase dbWrite = getWritableDatabase();
+        String whereClause =  "name=?";
+        String[] whereArgs = new String[] {name};
+        dbWrite.delete("person",whereClause,whereArgs);
         dbWrite.close();
     }
 
@@ -48,6 +62,7 @@ public class Database extends SQLiteOpenHelper {
             person[i] = new Person(c.getString(c.getColumnIndex("name")),c.getString(c.getColumnIndex("phone")));
             i++;
         }
+        c.close();
         dbRead.close();
     }
 

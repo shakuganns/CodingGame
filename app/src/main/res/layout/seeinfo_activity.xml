@@ -8,4 +8,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/seeinfoList"
         android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="删除联系人"
+        android:id="@+id/deletePerson"
+        android:layout_gravity="center_horizontal" />
 </LinearLayout>
