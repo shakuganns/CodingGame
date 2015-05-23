@@ -12,13 +12,11 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.phonebook.R;
 
 import java.util.ArrayList;
 
 
 /**
- *
  * Created by 圣麟 on 2015/5/23.
  */
 public class MainActivity extends ActionBarActivity {
@@ -59,21 +57,6 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-        SideBar sideBar = ((SideBar) findViewById(R.id.side_bar));
-        sideBar.setOnLetterTouchListener(new SideBar.OnLetterTouchListener() {
-            @Override
-            public void onLetterTouch(String letter, int position) {
-                tViewShowLetter.setVisibility(View.VISIBLE);
-                tViewShowLetter.setText(letter);
-                //phoneList.setSelectedGroup(position);
-            }
-
-            @Override
-            public void onActionUp() {
-                tViewShowLetter.setVisibility(View.GONE);
-            }
-        });
-        sideBar.setShowString(letters);
     }
 
     @Override

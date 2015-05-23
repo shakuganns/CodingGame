@@ -8,7 +8,6 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.SimpleAdapter;
 
-import com.example.phonebook.R;
 
 import java.util.List;
 import java.util.Map;

@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.example.phonebook.R;
 
 /**
  * Created by 圣麟 on 2015/5/23.

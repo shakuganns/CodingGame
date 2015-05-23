@@ -11,7 +11,6 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
-import com.example.phonebook.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

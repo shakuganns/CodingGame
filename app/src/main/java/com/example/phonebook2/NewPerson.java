@@ -3,13 +3,14 @@ package com.example.phonebook2;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.phonebook.R;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -73,8 +74,7 @@ public class NewPerson extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.submit) {
-            if (!((adapter.getValues(0)==null)||(adapter.getValues(1)==null)||
-                    (adapter.getValues(0)=="")||(adapter.getValues(1)==""))) {
+            if (TextUtils.isEmpty(adapter.getValues(0))||TextUtils.isEmpty(adapter.getValues(1))) {
                 Toast.makeText(getApplicationContext(), "请输入完整信息", Toast.LENGTH_SHORT).show();
 
             }
